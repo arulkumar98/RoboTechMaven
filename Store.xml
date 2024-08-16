@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<person>
+    <name>John Doe</name>
+    <address>123 Main St</address>
+    <email>john.doe@example.com</email>
+    <telephone>123-456-7890</telephone>
+</person>

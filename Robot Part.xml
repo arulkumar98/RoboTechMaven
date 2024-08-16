@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<robotPart>
+    <name>Vacuum</name>
+    <description>This is a good robot</description>
+    <supplier>China</supplier>
+    <weight>400</weight>
+</robotPart>
