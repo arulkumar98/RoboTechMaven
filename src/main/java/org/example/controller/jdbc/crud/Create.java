@@ -1,4 +1,4 @@
-package org.example.controller.jdbc.curd;
+package org.example.controller.jdbc.crud;
 
 import org.example.controller.jdbc.connection.ConnectionJdbc;
 import org.example.model.Person;
@@ -16,7 +16,7 @@ public class Create {
             // checking for duplicate
             PreparedStatement checkStmt = jdbcConnection.prepareStatement(
                     "SELECT COUNT(*) FROM person WHERE email = ?");
-            checkStmt.setString(1, person.email);
+            checkStmt.setString(1, person.getEmail());
             ResultSet rs = checkStmt.executeQuery();
 
             //if person is existing then return
@@ -29,10 +29,10 @@ public class Create {
             PreparedStatement smt = jdbcConnection.prepareStatement(
                     "INSERT INTO person(Name,Address,Telephone,email) values(?,?,?,?)",
                     Statement.NO_GENERATED_KEYS);
-            smt.setString(1, person.name);
-            smt.setString(2, person.address);
-            smt.setString(3, person.telephone);
-            smt.setString(4, person.email);
+            smt.setString(1, person.getName());
+            smt.setString(2, person.getAddress());
+            smt.setString(3, person.getTelephone());
+            smt.setString(4, person.getEmail());
             int rowAffected = smt.executeUpdate();
 
             if (rowAffected > 0){
@@ -44,7 +44,6 @@ public class Create {
         } catch (SQLException e) {
             log.error("Error in Create a person in create class", e);
         }
-
 
     }
 }

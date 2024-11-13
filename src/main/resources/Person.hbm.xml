@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="org.example.model.Person" table="customers">
+        <id name="id" column="PersonID" access="field">
+            <generator class="identity"/> <!-- Using 'identity' for AUTO_INCREMENT -->
+        </id>
+        <property name="name" column="Name" access="field"/>
+        <property name="address" column="Address" access="field"/>
+        <property name="telephone" column="Telephone" access="field"/>
+        <property name="email" column="Email" access="field"/>
+    </class>
+
+    <class name="org.example.model.RobotPart" table="RobotParts">
+        <id name="id" column="PartID" access="field">
+            <generator class="increment"/>
+        </id>
+        <property name="name"  column="Name" access="field"/>
+        <property name="description" column="Description" access="field"/>
+        <property name="supplier" column="Supplier" access="field"/>
+        <property name="weight" column="Weight" access="field"/>
+    </class>
+</hibernate-mapping>

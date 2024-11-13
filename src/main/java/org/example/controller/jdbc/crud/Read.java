@@ -1,4 +1,4 @@
-package org.example.controller.jdbc.curd;
+package org.example.controller.jdbc.crud;
 
 import org.example.controller.jdbc.connection.ConnectionJdbc;
 import org.example.model.Person;
@@ -19,14 +19,15 @@ public class Read {
         try {
             Connection connection = ConnectionJdbc.getConnection();
             Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM person");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM customers");
 
             while (resultSet.next()) {
                 Person person = new Person();
-                person.name = resultSet.getString("Name");
-                person.address = resultSet.getString("Address");
-                person.telephone = resultSet.getString("Telephone");
-                person.email = resultSet.getString("Email");
+                person.setId(resultSet.getInt("PersonID"));
+                person.setName(resultSet.getString("Name"));
+                person.setAddress(resultSet.getString("Address"));
+                person.setTelephone(resultSet.getString("Telephone"));
+                person.setEmail(resultSet.getString("Email"));
                 personArrayList.add(person);
             }
 

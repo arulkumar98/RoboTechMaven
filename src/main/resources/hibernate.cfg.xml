@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration >
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/robotparts</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">mysql</property>
+
+        <!-- Connection pool settings -->
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+
+        <!-- Specify the SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Show SQL in the console -->
+        <property name="hibernate.show_sql">true</property>
+
+        <!-- Automatically validate or update schema on startup -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+
+        <!-- Define the annotated entity classes -->
+        <mapping resource="Person.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

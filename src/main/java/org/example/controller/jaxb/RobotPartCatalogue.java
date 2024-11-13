@@ -1,4 +1,4 @@
-package org.example.jaxb;
+package org.example.controller.jaxb;
 
 import org.example.model.RobotPart;
 

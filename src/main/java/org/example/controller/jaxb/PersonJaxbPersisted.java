@@ -1,4 +1,4 @@
-package org.example.jaxb;
+package org.example.controller.jaxb;
 import org.example.model.Person;
 
 import javax.xml.bind.JAXBContext;
@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 import java.io.File;
 
 @XmlRootElement
-public class PersonJaxbPersisted {
+public class  PersonJaxbPersisted {
     public void persistPerson(Person person) {
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(Person.class);
